@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', [ProductController::class, 'index']);
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('test', [
+        'datas' => Product::all()
+    ]);
+});
+
+Route::get('/user', function () {
+    return view('test', [
+        'datas' => user::all(),
+
+    ]);
 });
